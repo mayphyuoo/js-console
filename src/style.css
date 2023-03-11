@@ -1,0 +1,155 @@
+/* colors
+#03001C
+#301E67
+#5B8FB9
+#B6EADA
+
+#2C3333
+#2E4F4F
+#0E8388
+#CBE4DE
+
+#F9F5E7
+*/
+
+
+/************** VARIABLE CSS **************/
+
+:root{
+    /************** COLORS **************/
+    --background-color: #B6EADA;
+    --console-bg-color: #03001C;
+    --console-font-color: #CBE4DE;
+    --console-ph-color: #94a7a2;
+    --nav-bar-color: #301E67;
+
+    --font-color: #03001C;
+
+    --brightest-color: ##F9F5E7;
+
+    /********** FONTS ***********/
+    --gullible-font: 'Maven Pro', sans-serif;
+    --body-font: 'Poppins', sans-serif;
+    --roboto-font: 'Roboto', sans-serif;
+    --robotomono-font: 'Roboto Mono', monospace;
+    --cursor-font: 'Russo One', sans-serif;
+}
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+
+
+
+/***************** NAVBAR ************************/
+
+a {
+	text-decoration: none;
+}
+
+li {
+	list-style: none;
+}
+
+.navbar {
+	display: flex;
+	align-items: center;
+    position: sticky;
+    top: 0;
+	justify-content: space-between;
+	padding: 20px;
+	background-color: var(--nav-bar-color);
+	color: #F9F5E7;
+}
+
+.nav-links a {
+	color: #F9F5E7;
+}
+
+/* LOGO */
+
+.logo {
+	font-size: 1.8rem;
+    font-family: 'Roboto Mono', sans-serif;
+}
+
+/* NAVBAR MENU */
+
+.menu {
+	display: flex;
+	gap: 1em;
+	font-size: 1.125rem;
+    font-family: 'Maven Pro', sans-serif;
+}
+
+.social-icon {
+    font-size: 1.25rem;
+    cursor: pointer;
+}
+
+.menu li {
+	padding: 5px 14px;
+}
+
+/*RESPONSIVE NAVBAR MENU STARTS*/
+
+/* CHECKBOX HACK */
+
+input[type="checkbox"] {
+	display: none;
+}
+
+/*HAMBURGER MENU*/
+
+.hamburger {
+	display: none;
+    font-size: 24px;
+    user-select: none;
+}
+
+/* APPLYING MEDIA QUERIES */
+
+@media (max-width: 768px) {
+	.menu {
+		display: none;
+        position: absolute;
+        background-color: #a7727d;
+        right: 0;
+        left: 0;
+        text-align: center;
+        padding: 16px 0;
+	}
+
+	input[type="checkbox"]:checked ~ .menu {
+		display: block;
+	}
+
+	.hamburger {
+		display: block;
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.logo-color{
+    filter: invert(93%) sepia(16%) saturate(196%) hue-rotate(113deg) brightness(94%) contrast(92%);
+}

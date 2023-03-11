@@ -4,9 +4,56 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+
+    <!-- stylesheet -->
+    <link rel="stylesheet" href="./src/style.css" class="stylesheet">
+
+    <!-- Tab icon -->
+    <link rel="icon" href="./logo.png" />
+
+    <!-- unicons -->
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
+
+    <!-- Google Fonts --> 
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Maven+Pro:wght@400;500;600&family=Poppins:wght@200;300;400;600;800&family=Roboto&family=Roboto+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+    <title>JS console</title>
 </head>
 <body>
+
+    <nav class="navbar">
+        <div class="logo">Code playground</div>
+        
+        <ul class="nav-links">
+            
+            <input type="checkbox" id="checkbox_toggle" />
+            
+            <label for="checkbox_toggle" class="hamburger">
+                &#9776;
+            </label>
+            
+            <div class="menu">
+                
+                <!-- Light/Dark mode -->
+                <li>
+                    <i data-mode="dark" class="uil uil-moon moon-change-theme social-icon" id="theme-button"></i></li>
+                <li>
+                    <a href="https://github.com/mayphyuoo/code-playground" target="_blank" rel="noreferrer"><i class="uil uil-github-alt social-icon"></i></a>
+                </li>
+
+            </div>
+        </ul>
+    </nav>
     
+    <!-- <img src="logo.svg" class="logo-color"/> -->
+
+
+    <!-- Typewriter effect -->
+    <script src="https://unpkg.com/typewriter-effect@latest/dist/core.js"></script>
+
+    <!-- Script -->
+    <script src="./src/script.js"></script>
 </body>
 </html>
