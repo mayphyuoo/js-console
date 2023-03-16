@@ -172,10 +172,10 @@ input[type="checkbox"]:checked ~ .switch-btn label .icons {
 	-o-transform: translateX(-20px);
 }
 
-.logo-color {
+/* .logo-color {
 	filter: invert(93%) sepia(16%) saturate(196%) hue-rotate(113deg)
 		brightness(94%) contrast(92%);
-}
+} */
 
 /***************** CONSOLE ************************/
 
