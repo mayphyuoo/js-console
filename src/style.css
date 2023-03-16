@@ -12,27 +12,38 @@
 #F9F5E7
 */
 
-
 /************** VARIABLE CSS **************/
 
-:root{
-    /************** COLORS **************/
-    --background-color: #B6EADA;
-    --console-bg-color: #03001C;
-    --console-font-color: #CBE4DE;
-    --console-ph-color: #94a7a2;
-    --nav-bar-color: #301E67;
+:root {
+	/************** COLORS **************/
+	--background-color: #b6eada;
+	--console-bg-color: #cbe4de;
+	--console-font-color: #03001c;
+	--console-ph-color: #94a7a2;
+	--nav-bar-color: #2e4f4f;
 
-    --font-color: #03001C;
+	--font-color: #03001c;
 
-    --brightest-color: ##F9F5E7;
+	--brightest-color: #f9f5e7;
 
-    /********** FONTS ***********/
-    --gullible-font: 'Maven Pro', sans-serif;
-    --body-font: 'Poppins', sans-serif;
-    --roboto-font: 'Roboto', sans-serif;
-    --robotomono-font: 'Roboto Mono', monospace;
-    --cursor-font: 'Russo One', sans-serif;
+	/********** FONTS ***********/
+	--gullible-font: "Maven Pro", sans-serif;
+	--body-font: "Poppins", sans-serif;
+	--roboto-font: "Roboto", sans-serif;
+	--robotomono-font: "Roboto Mono", monospace;
+	--cursor-font: "Russo One", sans-serif;
+}
+
+/************** VARIABLE FOR DARK THEME **************/
+
+body.dark-theme {
+	--background-color: #2c4b42;
+	--console-bg-color: #151c1c;
+	--console-font-color: #cbe4de;
+	--console-ph-color: #263933;
+	--nav-bar-color: #1d3333;
+
+	--font-color: #03001c;
 }
 
 * {
@@ -41,8 +52,11 @@
 	box-sizing: border-box;
 }
 
-
-
+body {
+	font-family: var(--body-font);
+	font-size: 1rem;
+	background-color: var(--background-color);
+}
 
 /***************** NAVBAR ************************/
 
@@ -57,23 +71,23 @@ li {
 .navbar {
 	display: flex;
 	align-items: center;
-    position: sticky;
-    top: 0;
+	position: sticky;
+	top: 0;
 	justify-content: space-between;
 	padding: 20px;
 	background-color: var(--nav-bar-color);
-	color: #F9F5E7;
+	color: #f9f5e7;
 }
 
 .nav-links a {
-	color: #F9F5E7;
+	color: #f9f5e7;
 }
 
 /* LOGO */
 
 .logo {
-	font-size: 1.8rem;
-    font-family: 'Roboto Mono', sans-serif;
+	font-size: 2rem;
+	font-family: "Roboto Mono", sans-serif;
 }
 
 /* NAVBAR MENU */
@@ -82,74 +96,145 @@ li {
 	display: flex;
 	gap: 1em;
 	font-size: 1.125rem;
-    font-family: 'Maven Pro', sans-serif;
+	font-family: "Maven Pro", sans-serif;
 }
 
 .social-icon {
-    font-size: 1.25rem;
-    cursor: pointer;
+	font-size: 2.5rem;
+	cursor: pointer;
 }
 
 .menu li {
 	padding: 5px 14px;
 }
 
-/*RESPONSIVE NAVBAR MENU STARTS*/
+.button{
+    cursor: pointer;
+}
 
-/* CHECKBOX HACK */
+/* https://github.com/time-to-program/dark-mode-toggle-switch-html-css */
+/***************** dark mode toggle switch ************************/
 
 input[type="checkbox"] {
 	display: none;
 }
 
-/*HAMBURGER MENU*/
-
-.hamburger {
-	display: none;
-    font-size: 24px;
-    user-select: none;
+.switch-btn {
+	width: 90px;
+	height: 50px;
+	background-color: var(--brightest-color);
+	border: 4px solid var(--font-color);
+	border-radius: 30px;
+	padding: 6px;
 }
 
-/* APPLYING MEDIA QUERIES */
-
-@media (max-width: 768px) {
-	.menu {
-		display: none;
-        position: absolute;
-        background-color: #a7727d;
-        right: 0;
-        left: 0;
-        text-align: center;
-        padding: 16px 0;
-	}
-
-	input[type="checkbox"]:checked ~ .menu {
-		display: block;
-	}
-
-	.hamburger {
-		display: block;
-	}
+label {
+	width: 30px;
+	height: 30px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	background: var(--nav-bar-color);
+	border-radius: 30px;
+	overflow: hidden;
+	cursor: pointer;
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-.logo-color{
-    filter: invert(93%) sepia(16%) saturate(196%) hue-rotate(113deg) brightness(94%) contrast(92%);
+.icons {
+	display: flex;
+	align-items: center;
+	gap: 20px;
+	transform: translate(-11px, 19px) rotate(120deg);
+	-webkit-transform: translate(-11px, 19px) rotate(120deg);
+	-moz-transform: translate(-11px, 19px) rotate(120deg);
+	-o-transform: translate(-11px, 19px) rotate(120deg);
+	user-select: none;
+	color: var(--brightest-color);
 }
+
+input[type="checkbox"]:checked ~ .switch-btn {
+	border: 4px solid var(--console-bg-color);
+	background-color: var(--console-font-color);
+}
+
+input[type="checkbox"]:checked ~ .switch-btn label {
+	transform: translateX(calc(70px - 30px));
+	-webkit-transform: translateX(calc(70px - 30px));
+	-moz-transform: translateX(calc(70px - 30px));
+	-o-transform: translateX(calc(70px - 30px));
+	box-shadow: 0px 3px 5px 0px rgba(0, 0, 0, 0.2);
+}
+
+input[type="checkbox"]:checked ~ .switch-btn label .icons {
+	transform: translateX(-20px);
+	-webkit-transform: translateX(-20px);
+	-moz-transform: translateX(-20px);
+	-o-transform: translateX(-20px);
+}
+
+.logo-color {
+	filter: invert(93%) sepia(16%) saturate(196%) hue-rotate(113deg)
+		brightness(94%) contrast(92%);
+}
+
+/***************** CONSOLE ************************/
+
+.console * {
+    font-family: var(--robotomono-font);
+  }
+  
+  .console {
+    display: flex;
+    flex-direction: row;
+    background: var(--console-bg-color);
+    height: 90vh;
+  }
+  
+  .console-history {
+    flex-grow: 1;
+    flex: 1;
+    box-sizing: border-box;
+    padding: 24px;
+    overflow-y: auto;
+    background-color: var(--console-ph-color);
+    color: var(--console-font-color);
+  }
+  
+  .console-input-log,
+  .console-output-log {
+    box-sizing: border-box;
+    padding: 6px 12px;
+    
+  }
+  
+  .console-input-log:hover,
+  .console-output-log:hover {
+    background: rgba(255, 255, 255, 0.03);
+  }
+  
+  .console-input-log {
+    color: var(--console-font-color);
+    font-weight: bold;
+  }
+  
+  .console-output-log {
+    color: var(--console-font-color);
+  }
+  
+  .console-input {
+    flex: 1;
+    box-sizing: border-box;
+    padding: 12px;
+    outline: none;
+    border: none;
+    border-top: 1px solid #333333;
+    color: var(--console-font-color);
+    background: rgba(255, 255, 255, 0.05);
+    transition: background 0.2s;
+    caret-color: var(--console-font-color);
+  }
+  
+  .console-input:hover,
+  .console-input:focus {
+    background: rgba(255, 255, 255, 0.07);
+  }

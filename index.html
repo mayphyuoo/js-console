@@ -1,59 +1,96 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <!-- stylesheet -->
-    <link rel="stylesheet" href="./src/style.css" class="stylesheet">
+		<!-- stylesheet -->
+		<link rel="stylesheet" href="./src/style.css" class="stylesheet" />
 
-    <!-- Tab icon -->
-    <link rel="icon" href="./logo.png" />
+		<!-- Tab icon -->
+		<link rel="icon" href="./logo.png" />
 
-    <!-- unicons -->
-    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
+		<!-- unicons -->
+		<link
+			rel="stylesheet"
+			href="https://unicons.iconscout.com/release/v4.0.0/css/line.css"
+		/>
 
-    <!-- Google Fonts --> 
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Maven+Pro:wght@400;500;600&family=Poppins:wght@200;300;400;600;800&family=Roboto&family=Roboto+Mono:wght@400;500&display=swap" rel="stylesheet">
+		<!-- Google Fonts -->
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Maven+Pro:wght@400;500;600&family=Poppins:wght@200;300;400;600;800&family=Roboto&family=Roboto+Mono:wght@400;500&display=swap"
+			rel="stylesheet"
+		/>
 
-    <title>JS console</title>
-</head>
-<body>
+		<!-- toggle switch button icons -->
+		<link
+			rel="stylesheet"
+			href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
+		/>
 
-    <nav class="navbar">
-        <div class="logo">Code playground</div>
-        
-        <ul class="nav-links">
-            
-            <input type="checkbox" id="checkbox_toggle" />
-            
-            <label for="checkbox_toggle" class="hamburger">
-                &#9776;
-            </label>
-            
-            <div class="menu">
-                
-                <!-- Light/Dark mode -->
-                <li>
-                    <i data-mode="dark" class="uil uil-moon moon-change-theme social-icon" id="theme-button"></i></li>
-                <li>
-                    <a href="https://github.com/mayphyuoo/code-playground" target="_blank" rel="noreferrer"><i class="uil uil-github-alt social-icon"></i></a>
-                </li>
+		<title>JS console</title>
+	</head>
+	<body>
+		<nav class="navbar">
+			<div class="logo">JS playground</div>
 
-            </div>
-        </ul>
-    </nav>
-    
-    <!-- <img src="logo.svg" class="logo-color"/> -->
+			<ul class="nav-links">
+				<div class="menu">
+					<li>
+						<div class="logo button">
+							<i class="uil uil-play" id="run-button"></i>
+						</div>
+					</li>
 
+					<li>
+						<div class="logo button">
+							<i class="uil uil-trash-alt" id="clr-button"></i>
+						</div>
+					</li>
+					<!-- Light/Dark mode -->
+					<li>
+						<input type="checkbox" id="switch" />
 
-    <!-- Typewriter effect -->
-    <script src="https://unpkg.com/typewriter-effect@latest/dist/core.js"></script>
+						<div class="switch-btn">
+							<label for="switch" id="switch-label">
+								<div class="icons">
+									<span class="material-symbols-rounded">
+										light_mode
+									</span>
+									<span class="material-symbols-rounded">
+										nights_stay
+									</span>
+								</div>
+							</label>
+						</div>
+					</li>
+					<li>
+						<a
+							href="https://github.com/mayphyuoo/code-playground"
+							target="_blank"
+							rel="noreferrer"
+							><i class="uil uil-github-alt social-icon"></i
+						></a>
+					</li>
+				</div>
+			</ul>
+		</nav>
 
-    <!-- Script -->
-    <script src="./src/script.js"></script>
-</body>
+		<div class="console">
+			<div class="console-history"></div>
+			<textarea
+				class="console-input"
+				autofocus
+				spellcheck="false"
+			></textarea>
+		</div>
+
+		<!-- <img src="logo.svg" class="logo-color"/> -->
+
+		<!-- Script -->
+		<script src="./src/script.js"></script>
+	</body>
 </html>
